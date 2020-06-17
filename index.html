@@ -1,0 +1,749 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;php&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="php">php</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#key" class="toc-h2 toc-link" data-title="key">KEY</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sync-leads" class="toc-h1 toc-link" data-title="sync-leads">Sync Leads</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-lead-to-anarock-database" class="toc-h2 toc-link" data-title="post-lead-to-anarock-database">Post Lead to Anarock Database</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sample-complete-working-php-code" class="toc-h1 toc-link" data-title="sample-complete-working-php-code">Sample complete working PHP Code</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#https-github-com-anarock-leads-blob-master-sample_lead_push-php" class="toc-h2 toc-link" data-title="a-href-https-github-com-anarock-leads-blob-master-sample_lead_push-php-https-github-com-anarock-leads-blob-master-sample_lead_push-php-a"><a href="https://github.com/anarock/leads/blob/master/sample_lead_push.php">https://github.com/anarock/leads/blob/master/sample_lead_push.php</a></a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#check-successful-submission" class="toc-h1 toc-link" data-title="check-successful-submission">Check Successful Submission</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Contact Anarock team for API KEY</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Anarock! You can use API for pushing leads from your system to our database.</p>
+
+<p>Below is a documentation about how to use the API for publishing leads to Anarock databse.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>Code for creating hash using time_stamp:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+<span class="c1">// the shared secret key here
+</span><span class="nv">$key</span> <span class="o">=</span> <span class="s1">'KEY'</span><span class="p">;</span> 
+<span class="nv">$current_time</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$current_time</span><span class="p">;</span>
+
+<span class="c1">// to lowercase hexits
+</span><span class="nv">$hash</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// NodeJS</span>
+<span class="kd">var</span> <span class="nx">cryto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'crypto'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span>  <span class="s1">'KEY'</span><span class="p">;</span> <span class="c1">// the shared secret key here</span>
+<span class="kd">var</span> <span class="nx">time_stamp</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">time_stamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+
+<span class="c1">// to lowercase hexits</span>
+<span class="k">return</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">digest</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">);</span>
+
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>KEY</code> with your API key.</p>
+</blockquote>
+
+<p>Anarock uses SHA256 HMAC authentication method. The hash is created using current timestamp and your key as parameters.</p>
+
+<p>You can request key by getting in touch with Anarock team.</p>
+
+<p>Anarock expects the two keys <code>hash</code> and <code>current_time</code> to be included in all API requests to server.</p>
+<h3 id='key'>KEY</h3>
+<p>These will be provided by your point of contact in ANAROCK team.</p>
+
+<aside class="notice">
+You must replace <code>KEY</code> with your personal API key.
+</aside>
+
+<aside class="notice">
+You must test first with <code>staging KEY</code> and then only put in <code>production KEY</code>.
+</aside>
+<h1 id='sync-leads'>Sync Leads</h1><h2 id='post-lead-to-anarock-database'>Post Lead to Anarock Database</h2><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span> 
+
+<span class="nv">$api_url</span> <span class="o">=</span> <span class="s1">'STAGING OR PRODUCTION URL'</span><span class="p">;</span> <span class="c1">// as mentioned on left under HTTP Request Heading
+</span>
+
+<span class="nv">$key</span> <span class="o">=</span> <span class="s1">'KEY'</span><span class="p">;</span> 
+<span class="nv">$current_time</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$current_time</span><span class="p">;</span>
+
+<span class="c1">// to lowercase hexits
+</span><span class="nv">$hash</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+
+<span class="c1">// you can use libraries like https://github.com/brick/phonenumber to format numbers before sending
+</span>
+<span class="nv">$number</span> <span class="o">=</span> <span class="nx">PhoneNumber</span><span class="o">::</span><span class="na">parse</span><span class="p">(</span><span class="s1">'+447123456789'</span><span class="p">);</span> <span class="c1">// phone number of the lead with +
+</span><span class="nv">$country_code</span> <span class="o">=</span> <span class="nv">$number</span><span class="o">-&gt;</span><span class="na">getRegionCode</span><span class="p">();</span> <span class="c1">// GB
+</span><span class="nv">$phone</span> <span class="o">=</span> <span class="nv">$number</span><span class="o">-&gt;</span><span class="na">getNationalNumber</span><span class="p">();</span> <span class="c1">// 7123456789
+</span>
+<span class="nv">$campaign_id</span> <span class="o">=</span> <span class="s2">"UniqueString"</span><span class="p">;</span> <span class="c1">// String to Attribute the lead to specific project. contact ANAROCK team for this.
+</span>
+<span class="nv">$postFields</span>  <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;name="</span><span class="o">.</span><span class="nv">$name</span><span class="p">;</span> <span class="c1">// refer to query parameters section on left section
+</span><span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;email="</span><span class="o">.</span><span class="nv">$email</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;source="</span><span class="o">.</span><span class="nv">$utm_source</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;sub_source="</span><span class="o">.</span><span class="nv">$utm_campaign</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;placement="</span><span class="o">.</span><span class="nv">$utm_term</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;current_time="</span><span class="o">.</span><span class="nv">$current_time</span><span class="p">;</span>
+<span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;phone="</span><span class="o">.</span><span class="nv">$phone</span><span class="p">;</span> <span class="c1">// Phone number without country code
+</span><span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;country_code="</span><span class="o">.</span><span class="nv">$country_code</span><span class="p">;</span> <span class="c1">// Standard ISO3166-1 alpha-2 code for a country.
+</span><span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;hash="</span><span class="o">.</span><span class="nv">$hash</span><span class="p">;</span> <span class="c1">// its mandatory to create hash using same timestamp as sent in current_time parameter
+</span><span class="nv">$postFields</span> <span class="o">.=</span> <span class="s2">"&amp;campaign_id="</span><span class="o">.</span><span class="nv">$campaign_id</span><span class="p">;</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="nv">$api_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span>
+            <span class="nv">$postFields</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$server_output</span> <span class="o">=</span> <span class="nb">curl_exec</span> <span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="c1">// print_r($server_output);
+</span>
+
+<span class="cp">?&gt;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'crypto'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">PhoneNumber</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span> <span class="s1">'awesome-phonenumber'</span> <span class="p">);</span>
+<span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'axios'</span><span class="p">);</span> <span class="c1">// using axios to make post request, you can use any other method/library you are comfortable with</span>
+
+<span class="kr">const</span> <span class="nx">timeStamp</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">timeStamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">message</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">number</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PhoneNumber</span><span class="p">(</span><span class="nx">number</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span> <span class="c1">// pass the number with + to the PhoneNumber Library</span>
+<span class="kr">const</span> <span class="nx">phone</span> <span class="o">=</span> <span class="nx">number</span><span class="p">.</span><span class="nx">getNumber</span><span class="p">(</span><span class="s1">'significant'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">country_code</span> <span class="o">=</span> <span class="nx">number</span><span class="p">.</span><span class="nx">getRegionCode</span><span class="p">();</span>
+
+<span class="kr">const</span> <span class="nx">campaign_id</span> <span class="o">=</span> <span class="s1">'UniqueString'</span><span class="p">;</span><span class="c1">// String to Attribute the lead to specific project. contact ANAROCK team for this.</span>
+
+<span class="k">return</span> <span class="nx">axios</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'STAGING OR PRODUCTION URL'</span><span class="p">,</span> <span class="c1">// as mentioned on left under HTTP Request Heading</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">phone</span><span class="p">:</span> <span class="nx">phone</span><span class="p">,</span>
+    <span class="na">country_code</span><span class="p">:</span> <span class="nx">country_code</span><span class="p">,</span>
+    <span class="na">current_time</span><span class="p">:</span> <span class="nx">timeStamp</span><span class="p">,</span>
+    <span class="na">hash</span><span class="p">:</span> <span class="nx">hash</span><span class="p">,</span>
+    <span class="na">campaign_id</span><span class="p">:</span> <span class="nx">campaign_id</span><span class="p">,</span>
+    <span class="p">...</span> <span class="nx">other</span> <span class="nx">fields</span> <span class="nx">as</span> <span class="nx">given</span> <span class="k">in</span> <span class="nx">the</span> <span class="nx">query</span> <span class="nx">parameters</span> <span class="nx">section</span> <span class="nx">on</span> <span class="nx">left</span> <span class="nx">section</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lead_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17863</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used to posts a lead to ANAROCK database.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>staging</code></p>
+
+<p><code>POST https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/sync-lead</code></p>
+
+<p>``</p>
+
+<p><code>production</code></p>
+
+<p><code>POST https://lead.anarock.com/api/v0/CHANNEL_NAME/sync-lead</code></p>
+
+<aside class="notice">
+Authentication keys are environment specific. Make sure you are using <code>Staging KEY</code> in <code>Staging API</code> and <code>Production KEY</code> in<code>Production API</code>.
+</aside>
+<h3 id='channel_name'>CHANNEL_NAME</h3>
+<p>This will be provided by your point of contact from ANAROCK team</p>
+<h3 id='query-parameters'>QUERY PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>-</td>
+<td>Example &quot;Rahul Kumar&quot;</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String</td>
+<td>True</td>
+<td>phone number without country code. Example: &quot;9988998899&quot;</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>String</td>
+<td>True</td>
+<td>Standard ISO3166-1 alpha-2 code for a country. Link: <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a> You can also use libraries like, example: &quot;IN&quot; for India Defaults to &quot;IN&quot;</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>-</td>
+<td>Exmaple &quot;abc@def.com&quot;</td>
+</tr>
+<tr>
+<td>purpose</td>
+<td>String</td>
+<td>True</td>
+<td>&quot;buy&quot; This should be hardcoded</td>
+</tr>
+<tr>
+<td>listing_id</td>
+<td>String</td>
+<td>-</td>
+<td>Id of the product/listing/project/property for which lead is generated. Example: &quot;111&quot;</td>
+</tr>
+<tr>
+<td>listing_name</td>
+<td>String</td>
+<td>-</td>
+<td>name of the project/property for which lead is generated. Example: &quot;Runwal Green&quot;</td>
+</tr>
+<tr>
+<td>current_time</td>
+<td>Integer</td>
+<td>True</td>
+<td>current epoch time in second(notmilisecond) Link: <a href="https://www.epochconverter.com/clock">https://www.epochconverter.com/clock</a></td>
+</tr>
+<tr>
+<td>hash</td>
+<td>String</td>
+<td>True</td>
+<td>Generated in the section  <a href="/?php#authentication">above</a> Hash should be created using the same time stamp as sent in the parameter <code>current_time</code></td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>-</td>
+<td>Example &quot;Mumbai&quot;</td>
+</tr>
+<tr>
+<td>locality</td>
+<td>String</td>
+<td>-</td>
+<td>Example &quot;Bandra West&quot;</td>
+</tr>
+<tr>
+<td>min_budget</td>
+<td>Integer</td>
+<td>-</td>
+<td>exmaple 10000000</td>
+</tr>
+<tr>
+<td>max_budget</td>
+<td>Integer</td>
+<td>-</td>
+<td>exmaple 50000000</td>
+</tr>
+<tr>
+<td>contact_date</td>
+<td>Integer</td>
+<td>-</td>
+<td>epoch time(in second) at which lead has contacted</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>String</td>
+<td>-</td>
+<td>additional comment about lead</td>
+</tr>
+<tr>
+<td>homeloan_required</td>
+<td>Boolean</td>
+<td>-</td>
+<td>whether the lead is interested in home loan or not</td>
+</tr>
+<tr>
+<td>is_otp_verified</td>
+<td>Boolean</td>
+<td>-</td>
+<td>whether the lead is OTP verified or not</td>
+</tr>
+<tr>
+<td>is_call_verified</td>
+<td>Boolean</td>
+<td>-</td>
+<td>whether the lead is Call verified or not</td>
+</tr>
+<tr>
+<td>credit_value</td>
+<td>Stirng</td>
+<td>-</td>
+<td>credit/ cost of the lead. Exmaple: &quot;250&quot;</td>
+</tr>
+<tr>
+<td>is_broker</td>
+<td>Boolean</td>
+<td>-</td>
+<td>whether the lead submitted is of a broker or not</td>
+</tr>
+<tr>
+<td>apartment_types</td>
+<td>String</td>
+<td>-</td>
+<td>comma separated bhk types where bhk type can be <code>1bhk/2bhk/3bhk/3+bhk/1rk</code>) example: &quot;2bhk,3+bhk&quot;</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>-</td>
+<td><code>google</code>, <code>facebook</code>, <code>affiliate</code>, <code>emailer</code>, <code>linkedin</code>, <code>portals</code>,<code>twitter</code>, pass in the value of utm_source</td>
+</tr>
+<tr>
+<td>sub_source</td>
+<td>String</td>
+<td>-</td>
+<td><code>google_display</code>, <code>google_search</code>, <code>facebook_brands</code>, <code>facebook_lead_gen</code>, <code>affiliate</code>  - pass in the value of utm_medium</td>
+</tr>
+<tr>
+<td>placement</td>
+<td>String</td>
+<td>-</td>
+<td><code>utm_campaign</code> , <code>affiliate_name</code> e.g. taboola, nestoria, polyvalent, times_of_india, <code>portal_name</code> e.g. 99acres, magicbricks, housing  - this should tell exact campaign details be it google facebook etc. generally you should pass utm_campaign in this</td>
+</tr>
+<tr>
+<td>extra_details</td>
+<td>JSON</td>
+<td>-</td>
+<td>key-value pair which will contain any extra details for lead e.g. {&quot;utm_medium: &quot;something&quot;, &quot;utm_source&quot;: &quot;something&quot;, &quot;keyword&quot;: &quot;targetted keyword on google for the campaign&quot;}</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>String</td>
+<td>True</td>
+<td>The is a unique identifier for the project you are sending the lead for. Should be collected from point of contact in ANAROCK team. Without this lead attribution will be incorrect.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — without proper <code>campaign_id</code>, leads will not be attributed to the correct team, Always check with your point of contact that leads are attributed to the desired project only.
+</aside>
+<h3 id='phone-number-validation'>PHONE NUMBER VALIDATION</h3>
+<p>Please format phone numbers before sending using one of the libraries below</p>
+
+<table><thead>
+<tr>
+<th>Language</th>
+<th>Link</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>PHP</td>
+<td><a href="https://github.com/brick/phonenumber">https://github.com/brick/phonenumber</a></td>
+</tr>
+<tr>
+<td>NodeJS</td>
+<td><a href="https://www.npmjs.com/package/awesome-phonenumber">https://www.npmjs.com/package/awesome-phonenumber</a></td>
+</tr>
+</tbody></table>
+<h1 id='sample-complete-working-php-code'>Sample complete working PHP Code</h1>
+<p>Please replace variables according to use case</p>
+<h3 id='https-github-com-anarock-leads-blob-master-sample_lead_push-php'><a href="https://github.com/anarock/leads/blob/master/sample_lead_push.php">https://github.com/anarock/leads/blob/master/sample_lead_push.php</a></h3><h1 id='check-successful-submission'>Check Successful Submission</h1><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$key</span> <span class="o">=</span> <span class="s1">'KEY'</span><span class="p">;</span> 
+<span class="nv">$current_time</span> <span class="o">=</span> <span class="nb">time</span><span class="p">();</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$current_time</span><span class="p">;</span>
+
+<span class="c1">// to lowercase hexits
+</span><span class="nv">$hash</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$key</span><span class="p">);</span>
+
+<span class="nv">$phone</span> <span class="o">=</span> <span class="mi">9999999999</span> <span class="c1">// Phone number to test
+</span>
+<span class="nv">$api_url</span> <span class="o">=</span> <span class="s2">"https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone="</span><span class="o">+</span><span class="nv">$phone</span><span class="o">+</span><span class="s2">"&amp;current_time="</span><span class="o">+</span><span class="nv">$current_time</span><span class="o">+</span><span class="s2">"&amp;hash="</span><span class="o">+</span><span class="nv">$hash</span>
+
+<span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="nv">$api_url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$server_output</span> <span class="o">=</span> <span class="nb">curl_exec</span> <span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+<span class="c1">// print_r($server_output);
+</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'crypto'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">timeStamp</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">((</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">timeStamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+<span class="kr">const</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">message</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s1">'hex'</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">phone</span> <span class="o">=</span> <span class="mi">9999999999</span> <span class="c1">// Phone number to test</span>
+
+<span class="nx">axios</span><span class="p">({</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s2">`https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=</span><span class="p">${</span><span class="nx">phone</span><span class="p">}</span><span class="s2">&amp;current_time=</span><span class="p">${</span><span class="nx">timeStamp</span><span class="p">}</span><span class="s2">&amp;hash=</span><span class="p">${</span><span class="nx">hash</span><span class="p">}</span><span class="s2">`</span>
+<span class="p">})</span>
+
+</code></pre>
+<blockquote>
+<p>The API given will returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"lead_id"</span><span class="p">:</span><span class="mi">194466</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"NAME"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"EMAIL@SOMETHING.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="s2">"+9199999999"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country_code"</span><span class="p">:</span><span class="s2">"+91"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub_source"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"placement"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"extra_details"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="s2">"bkc test"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub_source_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To check if a lead has been successfully submitted with all parameters captured correctly.</p>
+
+<p>Use the following GET API</p>
+
+<p><code>staging</code></p>
+
+<p><code>https://lead-webhook.staging.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=PHONE_NUMBER&amp;current_time=CURRENT_TIME&amp;hash=HASH</code></p>
+
+<p><code>production</code></p>
+
+<p><code>https://lead.anarock.com/api/v0/CHANNEL_NAME/last-lead-data?phone=PHONE_NUMBER&amp;current_time=CURRENT_TIME&amp;hash=HASH</code></p>
+
+<aside class="success">
+Please ensure that you are getting the project name intended in the reponse given on the right.
+</aside>
+<h1 id='errors'>Errors</h1>
+<p>The Sync Lead API follows given error codes.</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Wrong Parameters --- The response would contain a json explaining the error</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="php">php</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
