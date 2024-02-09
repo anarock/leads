@@ -327,4 +327,3 @@ Use the following GET API
 
 > Please ensure that you are getting the project name intended in the reponse given on the right.
 
-
