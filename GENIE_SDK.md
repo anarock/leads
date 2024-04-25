@@ -3,6 +3,9 @@
 ## Introduction
 This documentation outlines the installation process, usage, and configuration options of the Genie SDK.
 
+#### Pre Requisite - Agent Id 
+Get the Agent Id from the support team.
+
 ## Getting Started
 
 ### Installation
@@ -20,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const genieSDK = new GenieSDK({
         containerId: "your_iframe_container_id_here",
         iframeId: "your_iframe_id_here",
-        agentId: "your_agent_id_here",
+        agentId: "your_agent_id_here",  // Get the agent Id from the support team.
         entity: "lead",
         iframeClassName: "your_iframe_class_name_here",
-        landingPageUrl: "your_redirection_url_here"
+        landingPageUrl: "your_redirection_url_here"  
     });
     genieSDK.insertIframe();
 });
@@ -49,10 +52,10 @@ For example, your complete HTML might look like this:
             const genieSDK = new GenieSDK({
                 containerId: "iframe-wrapper",
                 iframeId: "genie-iframe",
-                agentId: "11",
+                agentId: "XX", // Get the agentId from the support team
                 entity: "lead",
                 iframeClassName: "iframe-fullscreen",
-                landingPageUrl: "https://example.com/"
+                landingPageUrl: "https://example.com/" // Replace this with your landing page url
             });
             genieSDK.insertIframe();
         });
