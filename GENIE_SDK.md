@@ -12,7 +12,7 @@ Get the Agent Id from the support team.
 To integrate the Genie SDK into your web application, include the following script tag in the `<head>` section of your HTML document:
 
 ```html
-<script src="https://genie-an.s3.ap-south-1.amazonaws.com/genie_sdk/v1.1.0/genieSDK.min.js" defer></script>
+<script src="https://genie-an.s3.ap-south-1.amazonaws.com/genie_sdk/v2.0.0/genieSDK.min.js" defer></script>
 ```
 
 ### Initialization
@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
         containerId: "your_iframe_container_id_here",
         iframeId: "your_iframe_id_here",
         agentId: "your_agent_id_here",  // Get the agent Id from the support team.
-        entity: "lead",
         iframeClassName: "your_iframe_class_name_here",
         landingPageUrl: "your_redirection_url_here"  
     });
@@ -46,14 +45,13 @@ For example, your complete HTML might look like this:
 <html lang="en">
 <head>
     <title>Genie SDK Integration Example</title>
-    <script src="https://genie-an.s3.ap-south-1.amazonaws.com/genie_sdk/v1.1.0/genieSDK.min.js" defer></script>
+    <script src="https://genie-an.s3.ap-south-1.amazonaws.com/genie_sdk/v2.0.0/genieSDK.min.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const genieSDK = new GenieSDK({
                 containerId: "iframe-wrapper",
                 iframeId: "genie-iframe",
                 agentId: "XX", // Get the agentId from the support team
-                entity: "lead",
                 iframeClassName: "iframe-fullscreen",
                 landingPageUrl: "https://example.com/" // Replace this with your landing page url
             });
@@ -76,7 +74,6 @@ Configure the `GenieSDK` class using the following options:
 | `containerId`      | string | **Required**      |                | The ID of the container element where the iframe will be embedded. |
 | `iframeId`         | string | *Optional*        | `"genie-id"`   | The ID that will be assigned to the iframe.    |
 | `agentId`          | string | **Required**      |                | Identifier for the agent or service the SDK is interacting with. |
-| `entity`           | string | *Optional*        | `"lead"`       | The type of entity the iframe will interact with. |
 | `iframeClassName`  | string | *Optional*        | `"genie-class"`| CSS class to assign to the iframe.             |
 | `landingPageUrl`   | string | *Optional*        |                | URL to redirect the user to in case something went wrong. |
 
