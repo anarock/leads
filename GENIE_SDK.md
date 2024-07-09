@@ -32,18 +32,15 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 
 ### HTML Setup
-Ensure there is a container in your HTML to host the iframe, like this:
-
-```html
-<div id="iframe-wrapper" class="iframe-container"></div>
-```
-
 For example, your complete HTML might look like this:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <!-- FOR MOBILE RESPONSIVE VIEW -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genie SDK Integration Example</title>
     <script src="https://genie-an.s3.ap-south-1.amazonaws.com/genie_sdk/v2.0.0/genieSDK.min.js" defer></script>
     <script>
@@ -58,9 +55,70 @@ For example, your complete HTML might look like this:
             genieSDK.insertIframe();
         });
     </script>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        @media screen and (min-width: 1024px) {
+            .header {
+                padding: 20px 100px;
+            }
+        }
+    
+        .home-btn {
+            color: #fff;
+            background-color: #6161f1;
+            font-size: 0.9em;
+            padding: 8px 15px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+    
+        .main-container {
+            height: 100svh;
+            width: 100svw;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+    
+        .iframe-container {
+            flex-grow: 1;
+        }
+    
+        .iframe-fullscreen {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
+
+  <div class="main-container">
+    <div class="header">
+      <!-- replace img src with your logo -->
+      <img src="images/logo.png" width="80px"/>
+
+      <!-- replace href with your landing page url -->
+      <a class="home-btn" href="https://example.com">HOME</a>
+    </div>
+
     <div id="iframe-wrapper" class="iframe-container"></div>
+  </div>
+
 </body>
 </html>
 ```
@@ -83,28 +141,10 @@ Configure the `GenieSDK` class using the following options:
 #### `insertIframe()`
 This method creates and inserts an iframe into the specified container on the web page. It generates the iframe's source URL using the configured options and the current page's URL parameters.
 
-## Styling
-
-Customize the appearance of the iframe and its container using CSS. Apply styles directly to the container using its ID or class.
-
-Example:
-```css
-.iframe-fullscreen {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.iframe-container {
-  max-width: 640px;
-  margin: auto;
-}
-```
-
 ## Required Query Params in Parent Window
-The query parameters of the parent window should include: Name, Phone Number, Country Code and ID of the lead. 
+Ensure that the parent window URL includes the following query parameters: `name`, `phone`, `country_code`, and `lead_id`. These parameters are essential for proper functionality of the Genie SDK.
 
-Use the following example to pass the required parameters.
+Use the following example to pass the required parameters inside your `Anarock.submitLead` function call.
 ```javascript
 function onLeadSuccessCallback(leadId) {
     const ccode = 'Lead`s CountryCode'; // Example: '91'
@@ -118,12 +158,53 @@ function onLeadSuccessCallback(leadId) {
         name: name,
     });
 
-    window.location.href = `${window.location.protocol}//${window.location.hostname}/thank-you.html?${params.toString()}`;
+    const thankyouPage = 'thank-you.html' // replace with the name of your thankyou page.
+
+    window.location.href = `${window.location.protocol}//${window.location.hostname}/${thankyouPage}?${params.toString()}`;
 }
+```
+
+For example, your `Anarock.submitLead` function call might look like this:
+```javascript
+Anarock.submitLead({
+    name: name,
+    phone: phone, 
+    ccode: ccode,
+    remarks: remarks, 
+    email: email, 
+    source: source, 
+    subsource: sub_source, 
+    campaign_id: 'xxxx',
+    channel_name: 'website', 
+    api_key: 'xxxx', 
+    
+    onLeadSuccessCallback: function(leadID) {
+        const params = new URLSearchParams({
+            country_code: ccode,
+            phone: phone,
+            lead_id: leadID,
+            name: name,
+        });
+
+        const thankyouPage = 'thank-you.html';
+
+        window.location.href = `${window.location.protocol}//${window.location.hostname}/${thankyouPage}?${params.toString()}`;
+    },
+    
+    onLeadFailureCallback: function() {
+        alert("An error occurred while submitting the lead.");
+    },
+    
+    onInvalidPhone: function() {
+        alert("Please enter a valid phone number.");
+    },
+    
+    env: 'production' 
+});
+
 ```
 
 Replace `Lead's CountryCode`, `Lead's PhoneNumber`, and `Lead's Name` with actual data relevant to your application. The `leadId` parameter is provided to the callback function upon a successful lead submission.
 
 ## Conclusion
 The Genie SDK facilitates the integration of a dynamic iframe into web pages, providing various customization and configuration options to meet application needs.
-
