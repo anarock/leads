@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iframeClassName: "your_iframe_class_name_here",
     landingPageUrl: "your_redirection_url_here",
     domain: "anarockgenie.com", // Optional, default is "anarockgenie.com"
-    campaignId: "your_campaign_id_here", // Optional, used for lead synchronization if lead_id is not provided
+    campaignId: "your_campaign_id_here", // Optional, If provided, it will be used for lead synchronization when lead_id is not available
   });
   genieSDK.insertIframe();
 });
@@ -54,7 +54,7 @@ For example, your complete HTML might look like this:
                 iframeClassName: "iframe-fullscreen",
                 landingPageUrl: "https://example.com/", // Replace this with your landing page URL
                 domain: "anarockgenie.com",             // Optional
-                campaignId: "your_campaign_id_here",    // Required if leadSync is true
+                campaignId: "your_campaign_id_here", // Optional, If provided, it will be used for lead synchronization when lead_id is not available
             });
             genieSDK.insertIframe();
         });
