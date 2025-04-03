@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     iframeClassName: "your_iframe_class_name_here",
     landingPageUrl: "your_redirection_url_here",
     domain: "anarockgenie.com", // Optional, default is "anarockgenie.com"
-    campaignId: "your_campaign_id_here", // Optional, If provided, it will be used for lead synchronization when lead_id is not available
   });
   genieSDK.insertIframe();
 });
@@ -54,7 +53,6 @@ For example, your complete HTML might look like this:
                 iframeClassName: "iframe-fullscreen",
                 landingPageUrl: "https://example.com/", // Replace this with your landing page URL
                 domain: "anarockgenie.com",             // Optional
-                campaignId: "your_campaign_id_here", // Optional, If provided, it will be used for lead synchronization when lead_id is not available
             });
             genieSDK.insertIframe();
         });
@@ -140,7 +138,6 @@ Configure the `GenieSDK` class using the following options:
 | `iframeClassName` | `string` | *Optional*        | `"genie-class"`      | CSS class to assign to the iframe.                                                                                                              |
 | `landingPageUrl`  | `string` | *Optional*        |                      | URL to redirect the user to in case something went wrong or for tracking purposes.                                                              |
 | `domain`          | `string` | *Optional*        | `"anarockgenie.com"` | The domain where the Genie iframe is hosted. Change this only if instructed by the support team.                                                |
-| `campaignId`      | `string` | *Optional*        |                      | Campaign identifier used for lead synchronization if `lead_id` is not provided. If provided, the SDK will attempt to sync lead using this ID.   |
 
 ---
 
@@ -159,8 +156,6 @@ To ensure proper functionality of the Genie SDK, the parent window URL should in
 - `phone`: The phone number of the lead.
 - `country_code`: The country code of the phone number.
 - `lead_id`: The unique identifier for the lead.
-
-**Note:** If `lead_id` is not provided and `campaignId` is provided in the SDK options, the SDK will attempt to synchronize the lead by calling the lead sync API. If `lead_id` is not provided and `campaignId` is not provided, the SDK will log an error and will not proceed.
 
 ---
 
@@ -228,18 +223,7 @@ Anarock.submitLead({
 });
 ```
 
-**Replace** `your_campaign_id_here`, `your_api_key_here`, `Lead's CountryCode`, `Lead's PhoneNumber`, and `Lead's Name` with actual data relevant to your application. The `leadId` parameter is provided to the callback function upon a successful lead submission.
-
----
-
-## Handling Lead Synchronization
-
-If `lead_id` is not provided in the query parameters, and you have provided `campaignId` in the SDK options, the SDK will attempt to synchronize the lead by calling the lead sync API. Ensure that you have provided the `campaignId` in the SDK options. The SDK uses the following parameters for lead synchronization:
-
-- `integration_key`: Provided internally by the SDK.
-- `source`, `sub_source`, `purpose`: Predefined constants used by the SDK.
-- `name`, `phone`: Retrieved from the query parameters or defaults.
-- `campaign_id`: Provided in the SDK options.
+**Replace** `Lead's CountryCode`, `Lead's PhoneNumber`, and `Lead's Name` with actual data relevant to your application. The `leadId` parameter is provided to the callback function upon a successful lead submission.
 
 ---
 
@@ -250,7 +234,6 @@ The SDK includes improved error handling and logging:
 - **Missing Parameters:** The `validateRequiredParameters` method logs missing or invalid parameters but does not halt execution.
 - **Lead Sync Errors:** If lead synchronization fails, an error is logged, and the iframe is not inserted.
 - **Element Not Found:** If the container element specified by `containerId` is not found in the DOM, an error is logged.
-- **Missing `lead_id` and `campaignId`:** If `lead_id` is not provided and `campaignId` is also not provided, the SDK logs an error and does not proceed.
 
 ---
 
@@ -259,6 +242,5 @@ The Genie SDK facilitates the integration of a dynamic iframe into web pages, pr
 
 ---
 
-**Note:** Ensure that all the required query parameters are provided in the parent window URL to avoid any unexpected behavior. If you wish to enable automatic lead synchronization when `lead_id` is not available, provide the `campaignId` in the SDK options.
-
+**Note:** Ensure that all the required query parameters are provided in the parent window URL to avoid any unexpected behavior. 
 ---
